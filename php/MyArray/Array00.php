@@ -1,53 +1,54 @@
-#!/usr/local/bin/php
 <?php
+//#!/usr/local/bin/php
+namespace MyArray;
 
-/**
- *
- * @file array.php
- * @author liuhao
- * @date 2020/9/3
- */
-//declare(strict_types=1);
-ini_set('log_errors', 'Off');
-ini_set('error_reporting', E_ALL);
-ini_set('display_errors', 'On');
-
-$lArray = new LArray(20);
-echo $lArray->errorMsg ? $lArray->errorMsg . PHP_EOL : '';
-
-for ($i = 0; $i < 15; $i++) {
-	$insertResult = $lArray->insert($i, 'value:' . $i);
-	echo $lArray->errorMsg ? $lArray->errorMsg . PHP_EOL : '';
-}
-$lArray->dump();
-
-
-$deleteValue = $lArray->delete(5);
-echo $lArray->errorMsg ? $lArray->errorMsg . PHP_EOL : '';
-echo 'delete element is: ' . ($lArray->errorMsg ?? $deleteValue) . PHP_EOL;
-$lArray->dump();
-
-$deleteValue = $lArray->delete(6);
-echo $lArray->errorMsg ? $lArray->errorMsg . PHP_EOL : '';
-echo 'delete element is: ' . ($lArray->errorMsg ?? $deleteValue) . PHP_EOL;
-$lArray->dump();
-
-$deleteValue = $lArray->delete(10);
-echo $lArray->errorMsg ? $lArray->errorMsg . PHP_EOL : '';
-echo 'delete element is: ' . ($lArray->errorMsg ?? $deleteValue) . PHP_EOL;
-$lArray->dump();
-
-$findValue = $lArray->find(400);
-echo 'get element is: ' . ($lArray->errorMsg ?? $findValue) . PHP_EOL;
-$lArray->dump();
+///**
+// *
+// * @file Array00.php
+// * @author liuhao
+// * @date 2020/9/3
+// */
+////declare(strict_types=1);
+//ini_set('log_errors', 'Off');
+//ini_set('error_reporting', E_ALL);
+//ini_set('display_errors', 'On');
+//
+//$lArray = new Array00(20);
+//echo $lArray->errorMsg ? $lArray->errorMsg . PHP_EOL : '';
+//
+//for ($i = 0; $i < 15; $i++) {
+//	$insertResult = $lArray->insert($i, 'value:' . $i);
+//	echo $lArray->errorMsg ? $lArray->errorMsg . PHP_EOL : '';
+//}
+//$lArray->dump();
+//
+//
+//$deleteValue = $lArray->delete(5);
+//echo $lArray->errorMsg ? $lArray->errorMsg . PHP_EOL : '';
+//echo 'delete element is: ' . ($lArray->errorMsg ?? $deleteValue) . PHP_EOL;
+//$lArray->dump();
+//
+//$deleteValue = $lArray->delete(6);
+//echo $lArray->errorMsg ? $lArray->errorMsg . PHP_EOL : '';
+//echo 'delete element is: ' . ($lArray->errorMsg ?? $deleteValue) . PHP_EOL;
+//$lArray->dump();
+//
+//$deleteValue = $lArray->delete(10);
+//echo $lArray->errorMsg ? $lArray->errorMsg . PHP_EOL : '';
+//echo 'delete element is: ' . ($lArray->errorMsg ?? $deleteValue) . PHP_EOL;
+//$lArray->dump();
+//
+//$findValue = $lArray->find(400);
+//echo 'get element is: ' . ($lArray->errorMsg ?? $findValue) . PHP_EOL;
+//$lArray->dump();
 
 /**
  *可自定义下标的数组
- * @class LArray
+ * @class MyArray
  * @author liuhao
  * @date 2020/9/3
  */
-class LArray
+class Array00
 {
 	/**
 	 * @var int array相关
@@ -67,7 +68,7 @@ class LArray
 	
 	/**
 	 *构造函数
-	 * LArray constructor.
+	 * MyArray constructor.
 	 * @param int $size
 	 * @author liuhao
 	 * @date 2020/9/3

@@ -1,38 +1,41 @@
-#!/usr/local/bin/php
 <?php
+//#!/usr/local/bin/php
+
+namespace MyArray;
+
 /**
  *
- * @file array.php
+ * @file Array00.php
  * @author liuhao
  * @date 2020/9/3
  */
 //declare(strict_types=1);
-ini_set('log_errors', 'Off');
-ini_set('error_reporting', E_ALL);
-ini_set('display_errors', 'On');
+//ini_set('log_errors', 'Off');
+//ini_set('error_reporting', E_ALL);
+//ini_set('display_errors', 'On');
 
-
-$lArray = new LArray1(20);
-for ($i = 0; $i < 11; $i++) {
-	$lArray->append('value:' . $i) ? '' : __LINE__ . $lArray->errorMsg . PHP_EOL;
-}
-$lArray->dump();;
-
-
-echo $lArray->delete(3) ? '' : __LINE__ . $lArray->errorMsg . PHP_EOL;
-$lArray->dump();
-
-echo $lArray->delete(5) ? '' : __LINE__ . $lArray->errorMsg . PHP_EOL;
-$lArray->dump();
+//
+//$lArray = new Array01(20);
+//for ($i = 0; $i < 11; $i++) {
+//	$lArray->append('value:' . $i) ? '' : __LINE__ . $lArray->errorMsg . PHP_EOL;
+//}
+//$lArray->dump();;
+//
+//
+//echo $lArray->delete(3) ? '' : __LINE__ . $lArray->errorMsg . PHP_EOL;
+//$lArray->dump();
+//
+//echo $lArray->delete(5) ? '' : __LINE__ . $lArray->errorMsg . PHP_EOL;
+//$lArray->dump();
 
 
 /**
  * 不可自定义下标的数组
- * @class LArray
+ * @class MyArray
  * @author liuhao
  * @date 2020/9/3
  */
-class LArray1
+class Array01
 {
 	protected $size;
 	protected $length;
@@ -42,7 +45,7 @@ class LArray1
 	
 	/**
 	 *构造函数
-	 * LArray constructor.
+	 * MyArray constructor.
 	 * @author liuhao
 	 * @date 2020/9/3
 	 */
