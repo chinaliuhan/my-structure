@@ -15,7 +15,7 @@ namespace LinkedList\Practice;
  * @date 2020/9/6
  * @package LinkedList
  */
-class SingleLinkedList
+class PracticeSingleLinkedList
 {
 	//头结点
 	public $head;
@@ -34,7 +34,7 @@ class SingleLinkedList
 	public function __construct($head = null)
 	{
 		if ($head == null) {
-			$this->head = new SingleLinkedListNode();
+			$this->head = new PracticeSingleLinkedListNode();
 		} else {
 			$this->head = $head;
 		}

@@ -8,25 +8,6 @@
 
 namespace LinkedList\Practice;
 
-class nihao
-{
-	public $data;
-	public $next;
-	
-	/**
-	 *构造函数
-	 * nihao constructor.
-	 * @param null $data
-	 * @author liuhao
-	 * @date 2020/9/6
-	 */
-	public function __construct($data = null)
-	{
-		$this->data = $data;
-		$this->next = null;
-	}
-}
-
 /**
  *单向链表节点
  * @class SingleLinkedListNode
@@ -34,7 +15,7 @@ class nihao
  * @date 2020/9/6
  * @package LinkedList
  */
-class SingleLinkedListNode
+class PracticeSingleLinkedListNode
 {
 	//节点中的数据域
 	public $data;
