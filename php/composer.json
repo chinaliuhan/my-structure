@@ -1,5 +1,5 @@
 {
-  "name": "vendor_name/php",
+  "name": "lh/my-structure",
   "description": "description",
   "minimum-stability": "stable",
   "license": "proprietary",
@@ -10,6 +10,8 @@
     }
   ],
   "require": {
+    "php": ">=7.2",
+    "ext-json": "*"
   },
   "autoload": {
     "psr-4": {

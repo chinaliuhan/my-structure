@@ -1,39 +1,31 @@
 <?php
 /**
  *
- * @file SingleLinkedListNode.php
+ * @file PracticeSingleLinkedListNode.php
  * @author liuhao
  * @date 2020/9/6
  */
+declare(strict_types=1);
 
 namespace LinkedList\Practice;
 
 /**
- *单向链表节点
- * @class SingleLinkedListNode
+ *单项链表练习的节点类
+ * @class PracticeSingleLinkedListNode
  * @author liuhao
- * @date 2020/9/6
- * @package LinkedList
+ * @date 2020/9/18
+ * @package LinkedList\Practice
  */
 class PracticeSingleLinkedListNode
 {
-	//节点中的数据域
+	//数据
 	public $data;
-	
-	//节点中的指针域,指向下一个节点
+	//指针 - 指向下一个节点
 	public $next;
 	
-	/**
-	 *构造函数 - 初始化节点的数据域
-	 * SingleLinkedListNode constructor.
-	 * @param null $data
-	 * @author liuhao
-	 * @date 2020/9/6
-	 */
-	public function __construct($data = null)
+	public function __construct($data, $next)
 	{
 		$this->data = $data;
-		$this->next = null;
+		$this->next = $next;
 	}
-	//todo 持续添
 }
