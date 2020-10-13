@@ -14,7 +14,7 @@ ini_set('error_reporting', E_ALL);
 ini_set('display_errors', 'On');
 
 
-$practiceSingle = new \LinkedList\Practice\PracticeSingleLinkedList(null);
+$practiceSingle = new \LinkedList\Practice00\SingleLinkedList(null);
 
 $total = 11;
 for ($i = 0; $i < $total; $i++) {
@@ -31,8 +31,8 @@ echo $practiceSingle->printJson().PHP_EOL;
 
 
 //删除
-$deleteResult = $practiceSingle->delete(new \LinkedList\Practice\PracticeSingleLinkedListNode(0, null));
-$deleteResult = $practiceSingle->delete(new \LinkedList\Practice\PracticeSingleLinkedListNode(1, null));
+$deleteResult = $practiceSingle->delete(new \LinkedList\Practice00\SingleLinkedListNode(0, null));
+$deleteResult = $practiceSingle->delete(new \LinkedList\Practice00\SingleLinkedListNode(1, null));
 if (!$deleteResult) {
     echo $practiceSingle->errMsg.PHP_EOL;
 }

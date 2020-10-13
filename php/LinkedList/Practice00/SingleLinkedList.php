@@ -7,18 +7,18 @@
  */
 declare(strict_types=1);
 
-namespace LinkedList\Practice;
+namespace LinkedList\Practice00;
 
-use LinkedList\SingleLinkedListNode;
+use LinkedList\Practice00\SingleLinkedListNode;
 
 /**
  *单向链表-练习
- * @class   PracticeSingleLinkedList
+ * @class   SingleLinkedList
  * @author  liuhao
  * @date    2020/9/18
- * @package LinkedList\Practice
+ * @package LinkedList\Practice00
  */
-class PracticeSingleLinkedList
+class SingleLinkedList
 {
     //链表的头结点位置,其实就是当前数据集
     public $head;
@@ -29,7 +29,7 @@ class PracticeSingleLinkedList
 
     /**
      *构造函数- 初始化链表
-     * PracticeSingleLinkedList constructor.
+     * SingleLinkedList constructor.
      * @param $head
      * @author liuhao
      * @date   2020/9/18
@@ -38,8 +38,8 @@ class PracticeSingleLinkedList
     {
         //初始化链表及链表数据
         if (empty($head)) {
-            //初始化链表 - 数据和指针全部为null,作为哨兵使用
-            $this->head = new PracticeSingleLinkedListNode(null, null);
+            //初始化链表 - 数据和指针全部为null,后面可以作为哨兵使用
+            $this->head = new SingleLinkedListNode(null, null);
         } else {
             $this->head = $head;
         }
@@ -73,21 +73,16 @@ class PracticeSingleLinkedList
 
     /**
      *在某个几点后面插入指定的数据
-     * @param  PracticeSingleLinkedListNode  $originalNode
+     * @param  SingleLinkedListNode          $originalNode
      * @param                                $data
      * @return bool
      * @author liuhao
      * @date   2020/9/18
      */
-    public function insertDataAfter(PracticeSingleLinkedListNode $originalNode, $data): bool
+    public function insertDataAfter(SingleLinkedListNode $originalNode, $data): bool
     {
-        if (empty($originalNode)) {
-            $this->errMsg = '源节点错误: ';
-            return false;
-        }
-
         //为新的数据初始化一个节点对象, 并将数据填充到对象中去
-        $newNode            = new PracticeSingleLinkedListNode($data, $originalNode->next);
+        $newNode            = new SingleLinkedListNode($data, $originalNode->next);
         $originalNode->next = $newNode;
 
         $this->length++;
@@ -101,22 +96,14 @@ class PracticeSingleLinkedList
      * 2. 这里我们直接将新节点的next改成源节点的next
      * 3. 再将源节点中的next指向新节点
      *
-     * @param  PracticeSingleLinkedListNode  $originalNode
-     * @param  PracticeSingleLinkedListNode  $newNode
+     * @param  SingleLinkedListNode  $originalNode
+     * @param  SingleLinkedListNode  $newNode
      * @return bool
      * @author liuhao
      * @date   2020/9/18
      */
-    public function insertNodeAfter(
-        PracticeSingleLinkedListNode $originalNode,
-        PracticeSingleLinkedListNode $newNode
-    ): bool {
-        if (empty($originalNode)) {
-            $this->errMsg = '源节点有误';
-
-            return false;
-        }
-
+    public function insertNodeAfter(SingleLinkedListNode $originalNode, SingleLinkedListNode $newNode): bool
+    {
         $newNode->next      = $originalNode->next;
         $originalNode->next = $newNode;
 
@@ -133,19 +120,13 @@ class PracticeSingleLinkedList
      * 3. 将上一个节点的next指向下一个节点的next, 让链表直接跳过当前节点, 相当于是删除了当前节点
      * 4. 目前删除非常鸡肋,因为要删除一个节点,需要同时对比他的对象中data和next所有数据是否匹配才能确认是否是同一个节点
      * 5. 而next是下一个节点的整个数据,如果要匹配就要把next后面的数据全部传入进来,如果是删除第一个的话也还要,只要将next传入一个null
-     * @param  PracticeSingleLinkedListNode  $node
+     * @param  SingleLinkedListNode  $node
      * @return bool
      * @author liuhao
      * @date   2020/9/19
      */
-    public function delete(PracticeSingleLinkedListNode $node): bool
+    public function delete(SingleLinkedListNode $node): bool
     {
-        if ($node == null) {
-            $this->errMsg = '要删除的节点有误';
-
-            return false;
-        }
-
         //匹配该节点的前一个节点
         $preNode = $this->getPreNode($node);
         if (empty($preNode)) {
@@ -166,18 +147,13 @@ class PracticeSingleLinkedList
 
     /**
      *获取节点的前一个节点
-     * @param  PracticeSingleLinkedListNode  $node
-     * @return false|PracticeSingleLinkedListNode|null
+     * @param  SingleLinkedListNode  $node
+     * @return false|SingleLinkedListNode|null
      * @author liuhao
      * @date   2020/9/19
      */
-    public function getPreNode(PracticeSingleLinkedListNode $node)
+    public function getPreNode(SingleLinkedListNode $node)
     {
-        if ($node == null) {
-            $this->errMsg = '插入的节点有误';
-            return false;
-        }
-
         $currentNode = $this->head;
         $preNode     = $this->head;
 
@@ -202,7 +178,7 @@ class PracticeSingleLinkedList
     /**
      *通过传入的索引,获取链表的第N个数据
      * @param $index
-     * @return null|PracticeSingleLinkedListNode
+     * @return null|SingleLinkedListNode
      * @author liuhao
      * @date   2020/9/19
      */
