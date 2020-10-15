@@ -1,7 +1,7 @@
 <?php
 /**
  *
- * @file   index.php
+ * @file   Index.php
  * @author liuhao
  *
  * @date   2020/9/6
@@ -51,12 +51,29 @@ $singleLinkedList->printListSample();
 $singleLinkedList->insert("last insert");
 $singleLinkedList->printListSample();
 
-echo '链表结束 ---'.PHP_EOL;
+echo '链表结束 ---'.PHP_EOL.PHP_EOL;
 
 
+/**
+ * 队列
+ */
 
+echo '队列开始 ---'.PHP_EOL;
 
+$queueOnLinkedList = new \Queue\QueueOnLinkedList();
+for ($i = 0; $i < 10; $i++) {
+    $queueOnLinkedList->enqueue($i);
+}
+echo '队列长度: '.$queueOnLinkedList->getLength().PHP_EOL;
+$queueOnLinkedList->printString();
+$queueOnLinkedList->dequeue();
+$queueOnLinkedList->printString();;
+$queueOnLinkedList->dequeue();
+$queueOnLinkedList->printString();;
+$queueOnLinkedList->dequeue();
+$queueOnLinkedList->printString();;
+echo '队列长度: '.$queueOnLinkedList->getLength().PHP_EOL;
 
-
+echo '队列结束 ---'.PHP_EOL.PHP_EOL;
 
 

@@ -16,7 +16,9 @@
   "autoload": {
     "psr-4": {
       "MyArray\\": "MyArray/",
-      "LinkedList\\": "LinkedList/"
+      "LinkedList\\": "LinkedList/",
+      "Stack\\": "Stack/",
+      "Queue\\": "Queue/"
     }
   }
 }
