@@ -18,7 +18,8 @@
       "MyArray\\": "MyArray/",
       "LinkedList\\": "LinkedList/",
       "Stack\\": "Stack/",
-      "Queue\\": "Queue/"
+      "Queue\\": "Queue/",
+      "SkipList\\": "SkipList/"
     }
   }
 }
